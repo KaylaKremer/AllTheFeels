@@ -1,0 +1,11 @@
+#video-container,
+#status-container,
+#emoji-buttons-container,
+#model-buttons-container,
+#results-container,
+h1,
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

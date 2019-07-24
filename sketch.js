@@ -12,7 +12,7 @@ function setup() {
   noCanvas();
   video = createCapture(VIDEO);
   video.parent('video-container');
-  video.size(640, 480);
+  video.size(650, 325);
   background(0);
   mobilenet = ml5.featureExtractor('MobileNet', modelReady);
   classifier = mobilenet.classification(video, { numLabels: 10 });
@@ -20,49 +20,44 @@ function setup() {
 }
 
 function setupButtons() {
-  smile = select('#smile');
-  smile.mousePressed(function() {
-    classifier.addImage('Smile');
+  happy = select('#happy');
+  happy.mousePressed(function() {
+    classifier.addImage('Happy');
   });
     
-  tearsOfJoy = select('#tears-of-joy');
-  tearsOfJoy.mousePressed(function() {
-    classifier.addImage('Tears of Joy');
+  humor = select('#humor');
+  humor.mousePressed(function() {
+    classifier.addImage('humor');
   });
   
-  thinking = select('#thinking');
-  thinking.mousePressed(function() {
-    classifier.addImage('Thinking');
+  inquisitive = select('#inquisitive');
+  inquisitive.mousePressed(function() {
+    classifier.addImage('Inquisitive');
   });
   
-  tearsOfJoy = select('#tears-of-joy');
-  tearsOfJoy.mousePressed(function() {
-    classifier.addImage('Tears of Joy');
+  flirty = select('#flirty');
+  flirty.mousePressed(function() {
+    classifier.addImage('Flirty');
   });
   
-  wink = select('#wink');
-  wink.mousePressed(function() {
-    classifier.addImage('Wink');
+  crazy = select('#crazy');
+  crazy.mousePressed(function() {
+    classifier.addImage('Crazy');
   });
   
-  zany = select('#zany');
-  zany.mousePressed(function() {
-    classifier.addImage('Zany');
+  secretive = select('#secretive');
+  secretive.mousePressed(function() {
+    classifier.addImage('Secretive');
   });
   
-  secret = select('#secret');
-  secret.mousePressed(function() {
-    classifier.addImage('Secret');
+  annoyed = select('#annoyed');
+  annoyed.mousePressed(function() {
+    classifier.addImage('Annoyed');
   });
   
-  rollingEyes = select('#rolling-eyes');
-  rollingEyes.mousePressed(function() {
-    classifier.addImage('Rolling Eyes');
-  });
-  
-  frown = select('#frown');
-  frown.mousePressed(function() {
-    classifier.addImage('Frown');
+  sad = select('#sad');
+  sad.mousePressed(function() {
+    classifier.addImage('Sad');
   });
   
   scared = select('#scared');
@@ -89,10 +84,10 @@ function setupButtons() {
 
 function whileTraining(loss) {
   if (loss == null) {
-    select('#loss').html('Final Loss: ' + loss);
+    select('#loss').html('');
     select('#status').html('Finished Training');
   } else {
-    select('#loss').html('Loss: ' + loss);
+    select('#loss').html(' Loss: ' + loss);
     select('#status').html('Training...');
   }
 }
@@ -104,6 +99,6 @@ function gotResults(error, results) {
       label = results[0].label;
       select('#label').html(label);
       select('#confidence').html(results[0].confidence.toFixed(2) * 100 + '%');
-      classifier.classify(gotResults);
+      classifier.classify();
     }
 }

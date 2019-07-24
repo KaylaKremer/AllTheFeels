@@ -10,34 +10,45 @@
   </head>
 
   <body>
-    <h1>😂 All The Feels 😂</h1>
+    <div id="header-container">
+		<span class="emoji">😂</span>
+		<h1>All The Feels </h1>
+		<span class="emoji">😂</span>
+    </div>
     <h3>Emoji Transfer Learning with ml5.js & MobileNet</h3>
     <div id="video-container"></div>
-    <div id="status-container">Status: <span id="status">Loading MobileNet...</span></div>
+    <div id="status-container">
+	    <span id="status"> Loading MobileNet...</span>
+	    <span id="loss"></span>
+    </div>
+    <div id="results-container">
+		<div class="results">
+			Looks like you're feeling: <span id="label"></span>
+		</div>
+		<div class="results">
+			Confidence: <span id="confidence"></span>
+		</div>
+	  </div>
     <div id="emoji-buttons-container">
       <div class="button-row">
-    		<button id="smile">🙂</button>
-    		<button id="tears-of-joy">😂</button>
-    		<button id="thinking">🤔</button>
-    		<button id="wink">😉</button>
-    		<button id="zany">🤪</button>
+    		<button id="happy">🙂</button>
+    		<button id="humor">😂</button>
+    		<button id="inquisitive">🤔</button>
+    		<button id="flirty">😉</button>
+    		<button id="crazy">🤪</button>
     	</div>
     	<div class="button-row">
-    		<button id="secret">🤭</button>
-    		<button id="rolling-eyes">🙄</button>
-    		<button id="frown">☹️</button>
+    		<button id="secretive">🤭</button>
+    		<button id="annoyed">🙄</button>
+    		<button id="sad">☹️</button>
     		<button id="scared">😱</button>
     		<button id="angry">😠</button>
     	</div>
     </div>
     <div id="model-buttons-container">
-  		<button id="train">Train</button><span id="loss"></span>
+  		<button id="train">Train</button>
   		<button id="predict">Guess My Feels</button>
 	  </div>
-  	<div id="results-container">
-  		Looks like you're feeling: <span id="label">...</span>
-  		Confidence: <span id="confidence">...</span>
-  	</div>
     <script src="sketch.js"></script>
   </body>
 </html>

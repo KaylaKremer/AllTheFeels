@@ -8,19 +8,14 @@ function modelReady() {
   select('#status').html('MobileNet Loaded!');
 }
 
-function videoReady() {
-  console.log('Video is ready!!!');
-  return { numLabels: 10 };
-}
-
 function setup() {
   noCanvas();
   video = createCapture(VIDEO);
   video.parent('video-container');
-  video.size(640, 540);
+  video.size(640, 480);
   background(0);
   mobilenet = ml5.featureExtractor('MobileNet', modelReady);
-  classifier = mobilenet.classification(video, videoReady);
+  classifier = mobilenet.classification(video, { numLabels: 10 });
   setupButtons();
 }
 
@@ -92,16 +87,15 @@ function setupButtons() {
 
 }
 
-
 function whileTraining(loss) {
   if (loss == null) {
-    select('#loss').html('Done Training! Final Loss: ' + loss);
-    //classifier.classify(gotResults);
+    select('#loss').html('Final Loss: ' + loss);
+    select('#status').html('Finished Training');
   } else {
     select('#loss').html('Loss: ' + loss);
+    select('#status').html('Training...');
   }
 }
-
 
 function gotResults(error, results) {
   if (error) {

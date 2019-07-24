@@ -12,6 +12,8 @@ If you have **Python 2.7** installed on your computer, run `python -m SimpleHTTP
 
 Finally, open your browser and go to the url `localhost:8081`
 
+Alternatively, you can view the deployed app here: [https://allthefeels.kaylakremer.now.sh/](https://allthefeels.kaylakremer.now.sh/)
+
 ## Resources
 [https://ml5js.org/](https://ml5js.org/)
 

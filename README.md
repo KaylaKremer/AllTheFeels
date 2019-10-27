@@ -1,7 +1,7 @@
 # All The Feels: Emoji Transfer Learning with ml5.js & MobileNet 😂
 
 ## About
-This is a quick project I put together in a few hours using `ml5.js` for my presentation on machine learning for the web. It demonstrates the concept of `transfer learning` using the already pre-trained model of `MobileNet`. The concept is to train your computer how to recognize different human emotions via the webcam by categorizing facial expressions with the emoji buttons.
+This is a quick machine learning project I put together with `ml5.js`. It demonstrates the concept of `transfer learning` using the already pre-trained model of `MobileNet`. The concept is to train your computer how to recognize different human emotions via the webcam by categorizing facial expressions with the emoji buttons.
 
 ## How To Use
 `git clone` or download, then `cd` into the location of the repo.
